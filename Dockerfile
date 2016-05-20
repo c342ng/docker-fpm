@@ -5,6 +5,7 @@ RUN apt-get install -y \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
         libpng12-dev \
+        php5-mysql \
     && docker-php-ext-install -j$(nproc) iconv mcrypt mysql mysqli
 
 RUN apt-get install -y libmemcached-dev \
