@@ -9,5 +9,5 @@ RUN apt-get install -y \
     && docker-php-ext-install -j$(nproc) iconv mcrypt mysql mysqli
 
 RUN apt-get install -y libmemcached-dev \
-    && pecl install memcached redis \
-    && docker-php-ext-enable memcached redis
+    && pecl install memcached redis amqp\
+    && docker-php-ext-enable memcached redis amqp
