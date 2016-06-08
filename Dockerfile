@@ -11,3 +11,5 @@ RUN apt-get install -y \
 RUN apt-get install -y libmemcached-dev librabbitmq-dev \
     && pecl install memcached redis amqp \
     && docker-php-ext-enable memcached redis amqp
+    
+RUN apt-get install -y vim wget curl
