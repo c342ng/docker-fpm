@@ -1,4 +1,4 @@
-FROM php:5.6.21-fpm
+FROM php:5.6.26-fpm
 RUN apt-get update
 RUN apt-get install -y \
         libfreetype6-dev \
@@ -9,7 +9,5 @@ RUN apt-get install -y \
     && docker-php-ext-install -j$(nproc) iconv mcrypt mysql mysqli
 
 RUN apt-get install -y libmemcached-dev librabbitmq-dev \
-    && pecl install memcached redis amqp \
+    && pecl install memcached redis-2.2.8 amqp-1.6.0 \
     && docker-php-ext-enable memcached redis amqp
-    
-RUN apt-get install -y vim wget curl
