@@ -1,3 +1,3 @@
 FROM php:5.6.28-fpm-alpine
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
-RUN pecl install redis && docker-php-ext-enable redis
+RUN pecl install memcached redis-2.2.8 amqp-1.6.0 && docker-php-ext-enable memcached redis amqp
