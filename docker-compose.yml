@@ -2,5 +2,7 @@ version: '2'
 services:
   fpm:
     image: c3t3m3/docker-fpm
+    ports:
+      - "9000:9000"
     volumes:
       - ./data/:/data/:ro
